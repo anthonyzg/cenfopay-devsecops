@@ -57,7 +57,13 @@ herramientas:
   #     ALTA: 0
 
 # Excepciones (aceptación formal de un riesgo). Todas vencen: obligan a revisarlas.
-excepciones: []
+excepciones:
+  - herramienta: endurecimiento
+    id: END-02
+    tipo: falso_positivo
+    justificacion: "GPG_KEY la define la imagen oficial python:3.9-slim-bookworm: es el identificador de la llave pública con la que se verifica la descarga de Python, no un secreto. END-02 la marca solo porque su nombre contiene KEY."
+    responsable: "Anthony Zuniga"
+    vence: 2026-12-31
 #  - herramienta: trivy-dependencias
 #    id: CVE-2026-00000
 #    tipo: riesgo_aceptado                # o falso_positivo
